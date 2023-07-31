@@ -1,0 +1,13 @@
+Project Overview
+
+The goal of this project is create a responsive, personal portfolio website using HTML, CSS, and Javascript. 
+This will be used as my online portfolio that I can show to potential employers to showcase my experience.
+The website must contain interactive elements that showcase previous projects and work that is relevant to the Software Development industry.
+To begin with this website will have 3 pages, the home page/introduction, projects page, and contact information page including links to LinkedIn and GitHub pages.
+SEO principles must be implemented into the meta information as well as releveant title and description.
+The portfolio should have a user-friendly interface that makes it simple for visitors to switch between different sections and quickly find the data they require.
+Search and filtering should be available so that users can quickly find particular projects or skills. Additionally, a filter function could be used to group and order projects according to
+various factors like date, field, or applied skill.
+Implementing a contact form will allow site visitors to submit requests or messages while collecting crucial data like name, email address, and the message's content.
+The platform should enable the integration of different media types, such as pictures, videos, and documents, to display the user's work.
+
