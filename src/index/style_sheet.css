@@ -115,7 +115,6 @@ body {
 
 .home-container {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 75px; 
@@ -132,7 +131,7 @@ body {
 }
 
 .item-2, .item-3, .item-4, .item-5 {
-  flex: 0 0 25%;
+  flex: 0 0 50%; /* This makes each item take up 25% of the container's width */
   box-sizing: border-box; /* To include padding and border in the item's total width */
   padding: 0 10px; /* Optional: Add some padding for spacing between items */
 }
