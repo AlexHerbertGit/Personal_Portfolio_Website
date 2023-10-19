@@ -1,0 +1,296 @@
+
+/*Removes defualt margins and padding from html file*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  
+}
+
+body {
+  background: rgb(75, 74, 74); /*Sets background color*/
+  margin: 0; /* Remove default margin */
+  
+}
+
+/*Container for background image*/
+.background-container {
+      position: fixed;
+      background-attachment: fixed;
+      background-position: center;
+      background-image: url('anton-maksimov-5642-su-qM37iptlCNY-unsplash.jpg');
+      background-size: cover;
+      background-repeat: repeat;
+      opacity: 1;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow-y: auto;
+      overflow-x: auto;
+}
+/*Navigation bar*/
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+/*Placeholder for website logo, currently just text in the navigation bar*/
+.logo {
+  font-size: 55px;
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
+
+/* Styles for the search bar */
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Styles for the search button */
+.search-button {
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*Sets navigation link icons styles*/
+.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 35px;
+  
+}
+
+/*Hover settings for navbar links*/
+.navbar-centre a:hover,
+.navbar-centre a.active {
+  color:gold;
+}
+
+/*Grid container for page content items*/
+.home-container {
+    display: grid;
+    grid-template-columns: 750px, 750px;
+    grid-template-rows: 300px auto auto;
+    grid-gap: 25px;
+    margin-top: 75px; 
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 350px;
+    max-height: calc(100vh + 750px); /* Adjusts max-height */
+  }
+  
+  /*Page content heading*/
+  .item-1 {
+    grid-column: span 1; 
+    grid-row: 1/1;
+    min-width: 400px; 
+    color: white;
+    text-align: center;
+    background-color: rgb(5, 36, 59);
+    border-radius: 35px;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-right: 20% ;
+    margin-left: 20%;
+    padding: 25px;
+    
+  }
+
+  /*Heading 1 styles*/
+  .item-1 h1 {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /*Heading 3 styles*/
+  .item-1 h3 {
+    font-family: 'Roboto Slab', serif;
+
+  }
+
+  /*Form grid item styles and grid settings*/
+  .item-2 {
+    grid-column: 1/1; 
+    grid-row: 2/2;
+    min-width: 450px; 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    padding: 2%;
+    margin-right: 30%;
+    margin-left: 30%;
+    max-height: fit-content;
+    min-height: auto;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+
+  /*Content styles*/
+  .item-2 p {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+
+  .item-2 h2 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+
+  /*Link style and transistion*/
+  .item-2 a {
+    color: white;
+    transition: .3s;
+  }
+
+  /*Link hover style*/
+  .item-2 a:hover {
+    color:gold;
+  }
+
+/*Form styles and settings*/
+  .item-2 form {
+    max-width: 800px;
+    min-width: 400px;
+    margin: 0 ;
+    background: linear-gradient(to top, rgb(28, 88, 134), rgb(55, 167, 201));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+    break-inside: auto;
+}
+
+/* Style labels for the input fields */
+.item-2 label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="message"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 7px;
+    background-color: rgb(192, 192, 192);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Styles for submit button */
+input[type="submit"] {
+    background: linear-gradient(to bottom, rgb(28, 88, 134), rgb(55, 167, 201));
+    color: #fff;
+    padding: 10px 20px;
+    border: solid;
+    border-color: #000000;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Styles for the submit button on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+  
+  /*Footer alignment and styles*/
+  .footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: solid 2px;
+    border-color: black;
+    box-shadow: 0px 4px 6px black;
+    z-index: -1;
+    opacity: 1; 
+    transition: opacity 0.3s;
+}
+
+/*Footer content styles and settings*/
+.footer-content li {
+    font-size: 18px;
+    display: inline-flex;
+    list-style: none;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding: 3px;
+    margin: 30px;
+    background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
+    border-radius: 50px;
+    border-color: rgb(5, 36, 59);;
+    border-style: solid;
+    padding: 14px;
+    
+}
+
+/*Footer link style and transition*/
+.footer-content a {
+    color: white;
+    transition: .3s;
+  }
+
+/*Hover styles for footer links*/
+.footer-content a:hover {
+    color:gold;
+  }
+
+/*LinkedIn and GitHub Icon style and settings*/
+.social-icons-footer {
+  display: flex;
+  align-content: right;
+  justify-content: space-evenly;
+  margin-left: 65px;
+    
+}
+
+

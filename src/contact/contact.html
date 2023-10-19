@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Alex Herbert Portfolio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Font Awesome and Google Font and API links-->
+        <link rel="stylesheet" href="style_sheet.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Background container for background image-->
+        <div class="background-container">
+        
+        <!--Naviagtion bar and Logo-->
+        <header class="header">
+            <a href="#" class="logo">Alex Herbert Portfolio</a>
+            <nav class="navbar-centre">
+                <a href="#">Home</a>
+                <a href="#">Skills</a>
+                <a href="contact.html" class="active">Contact</a>    
+            </nav>
+            
+            <!--Search Bar-->
+            <form action="/search" method="get">
+                <input type="text" class="search-bar" name="query" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+
+        <!--Icons for LinkedIn and GitHub-->
+            <nav class="social-icons">
+                <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+                <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
+            </nav>
+        </header>
+
+        <!--Grid Conatiner for page content-->
+            <div class="home-container">
+
+                <!--Grid item for page heading-->
+                <div class="item-1"><h1>Contact Me</h1><h3>Job Opportunities and Projects</h3></div>
+
+                <!--Grid item for About Me content-->
+                <div class="item-2"><h2><u>Get in Touch</u></h2>
+
+                    <!--Form content-->
+                    <br><p>Please fill out the form below with your details and a message detailing your inquiry</p>
+                    <br>
+                        <form action="submit_form.php" method="POST"> <!--Add form submission url in this part when available-->
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required><br><br>
+                    
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required><br><br>
+                    
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required><br><br>
+                    
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company"><br><br>
+                    
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    
+                            <input type="submit" value="Submit">
+                        </form>                 
+                </div>
+            </div>
+            
+    <!--Footer container-->
+    <footer class="footer">
+
+        <!--Container for footer links and content-->
+        <div class="footer-content">
+
+            <!--List for footer contact information info and links-->
+            <ul>
+                <li><b>Email</b> - alex.herbert.tech@gmail.com</li>
+                <li><b>Phone</b> - 027 225 7572</li>
+                <li><b>LinkedIn</b> -  <a href="https://www.linkedin.com/in/alex-herbert-tech/">alex-herbert-tech</li></a>
+                <li><b>GitHub</b> - <a href="https://github.com/AlexHerbertGit">AlexHerbertGit</li></a>
+            </ul>
+        </div>
+
+        <!--Container for LinkedIn and GitHub icons and links-->
+        <nav class="social-icons-footer">
+            <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+            <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
+        </nav>
+    </footer>
+
+</div>
+<script src="script.js" async defer></script>     
+</body>
+</html>
