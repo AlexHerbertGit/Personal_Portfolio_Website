@@ -139,7 +139,7 @@ body {
   margin-top: 75px; 
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 350px;
+  margin-bottom: 150px;
   min-height: fit-content;
   max-height: fit-content;
   gap: 20px;
@@ -158,15 +158,19 @@ body {
 }
 
 .item-2, .item-3, .item-4, .item-5 {
-  flex: 0 0 calc(50% - 10px); /* This makes each item take up half of the container's width minus 10px for spacing */
+  flex: 0 0 calc(50% - 10px); 
   box-sizing: border-box;
-  padding: 0px; /* This will give a spacing of 10px between the items */
+  padding: 0px; 
 }
   /*Page content heading*/
   .item-1 {
-    flex: 0 0 100%; /* This makes it span the entire width */
+    flex: 0 0 100%; 
     color: white;
     text-align: left;
+    min-width: 300px;
+    min-height: fit-content;
+    max-height: fit-content;
+    padding: 20px;
     font-size: 55px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -195,6 +199,7 @@ body {
     font-size: 25px;
     font-weight: 500;
     padding: 35px;
+    min-width: 300px;
     min-height: fit-content;
     max-height: fit-content;
     background-color: rgb(5, 36, 59);
@@ -203,6 +208,7 @@ body {
     font-family: 'Roboto', sans-serif;
     word-wrap: break-word;
     word-break: keep-all;
+    overflow: hidden;
     
   }
 
@@ -225,15 +231,15 @@ body {
   /*Profile Picture grid item alignment settings*/
   .item-3 {
     display: block;  /* Change from flex to block */
-    min-width: 700px;
+    min-width: fit-content;
+    max-height: fit-content;
     border-radius: 75px;
     box-shadow: 0px 4px 6px black;
 }
   /*Profile Image styles and settings*/
   .item-3 img {
     border-radius: 75px;
-    width: 100%;       
-    height: auto;      
+    width: 100%;          
     display: block;    
     max-width: 100%;   
 }
@@ -249,8 +255,8 @@ body {
     font-size: 25px;
     font-weight: 500;
     padding: 35px;
-    min-width: 500px;
-    min-height: 700px;
+    min-width: 300px;
+    min-height: fit-content;
     max-height: fit-content;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
