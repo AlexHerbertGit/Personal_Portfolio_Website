@@ -113,16 +113,13 @@ body {
 
 .home-container {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 45px; /* Modern browsers support gap in flexbox */
+  justify-content: space-between;
   margin-top: 75px; 
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 350px;
-  max-height: calc(100vh + 750px); /* Adjusted max-height */
+  max-height: calc(100vh + 750px);
 }
 
 .home-container > div {
@@ -130,20 +127,24 @@ body {
   min-width: 400px;
   max-width: 750px;
 }
-  
+
+.item-2, .item-3, .item-4, .item-5 {
+  flex: 0 0 25%;
+  box-sizing: border-box; /* To include padding and border in the item's total width */
+  padding: 0 10px; /* Optional: Add some padding for spacing between items */
+}
+
   /*Page content heading*/
   .item-1 {
-    display: flex;
-    flex: 3;
-    flex-wrap: wrap; 
+    flex: 0 0 100%; /* This makes it span the entire width */
     color: white;
     text-align: left;
     font-size: 55px;
     font-weight: 700;
     margin-bottom: 15px;
-    padding: 25px;
-    
-  }
+    padding: 55px;
+    margin-left: 2%;
+}
 
   /*Heading 1 styles*/
   .item-1 h1 {
