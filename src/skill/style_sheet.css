@@ -264,7 +264,7 @@ body {
     justify-content: space-between;
     margin-left: 2%;
     margin-right: 2%;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     min-height: fit-content;
     max-height: fit-content;
     gap: 20px;
@@ -273,7 +273,7 @@ body {
   
   /*html image size*/
   .html-image {
-    display: flex;
+   display: flex;
    flex: 1;
    flex-wrap: wrap; 
    margin-top: 0px;
@@ -333,6 +333,27 @@ body {
     color:gold;
   }
 
+  .css-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 50px;
+    min-height: fit-content;
+    max-height: fit-content;
+    gap: 20px;
+  }
+
+  .css-image {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap; 
+    margin-top: 0px;
+    height: 270px;
+    min-height: 100px;
+}
+
 /*CSS section grid item styles and settings*/
   .heading-4 {
     display: flex; 
@@ -354,7 +375,6 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     word-wrap: break-word;
-    word-break: keep-all;
     
   }
   /*Content styles*/
@@ -371,6 +391,30 @@ body {
   /*Link hover style*/
   .heading-4 a:hover {
     color:gold;
+  }
+
+  /*CSS project image settings*/
+  .css-image-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 0px;
+    max-height: 600px;
+    min-height: 300px;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+  }
+
+.sql-container {
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 50px;
+    min-height: fit-content;
+    max-height: fit-content;
+    gap: 20px;
   }
 
   /*SQL section grid item styles and settings*/
@@ -394,7 +438,6 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     word-wrap: break-word;
-    word-break: keep-all;
     
   }
 /*Content styles*/
@@ -413,55 +456,24 @@ body {
     color:gold;
   }
 
-  /*CSS logo grid alignment*/
-  .css-logo {
-    grid-column: 1/2; 
-    grid-row: 4/5; 
-    margin-top: 0px;
-    
-  }
-/*CSS project image grid alignment*/
-  .css-logo-2 {
-    grid-column: 3/4; 
-    grid-row: 4/5; 
-    margin-top: 0px;
-  }
-
-  /*SQL logo grid alignment*/
-  .sql-logo {
-    grid-column: 1/2; 
-    grid-row: 5/6; 
-    margin-top: 0px;
-    
-  }
-
-  /*SQL project image grid alignment*/
-  .sql-logo-2 {
-    grid-column: 3/4; 
-    grid-row: 5/6; 
-    margin-top: 0px;
-  }
-  
-  
-
-  /*CSS project image settings*/
-  .css-image-2 {
-    height: minmax(100px, 300px);
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-  
-
   /*SQL image size*/
   .sql-image {
-    height: minmax(100px, 300px);
-   
-  }
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap; 
+    margin-top: 0px;
+    height: 270px;
+    min-height: 100px;
+}
 
-  /*SQL porject image size and settings*/
+  /*SQL project image size and settings*/
   .sql-image-2 {
-    height: minmax(100px, 300px);
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 0px;
+    max-height: 600px;
+    min-height: 300px;
     border-radius: 75px;
     box-shadow: 0px 4px 6px black;
   }
