@@ -6,45 +6,60 @@
     
  }
 
- body {
-    background: rgb(75, 74, 74); /*Sets background color*/
-    margin: 0; /* Remove default margin */
-    
-  }
+ 
+
+body {
+  display: flex;
+  background: rgb(75, 74, 74); /*Sets background color*/
+  margin: 0; /* Remove default margin */
+  
+}
 
 /*Container for background image*/
 .background-container {
-        position: fixed;
-        background-attachment: fixed;
-        background-position: center;
-        background-image: url('markus-spiske-hvSr_CVecVI-unsplash.jpg');
-        background-size: cover;
-        background-repeat: repeat;
-        opacity: 1;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        overflow-y: auto;
-        overflow-x: auto;
- }
+  position: fixed;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('markus-spiske-hvSr_CVecVI-unsplash.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow-y: auto;
+  overflow-x: auto;
+}
 
 /*Navigation bar*/
 .header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    padding: 20px 10%;
-    background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    border-bottom: solid 2px;
-    border-color: black;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 10%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
 }
+
+.header > div:first-child {
+  flex: 1;
+}
+
+.header > div:last-child {
+  flex: 3;
+}
+
 /*Placeholder for website logo, currently just text in the navigation bar*/
 .logo {
     font-size: 55px;
@@ -52,18 +67,10 @@
     text-decoration: none;
     font-weight: 600;
 }
-/*Sets styles for navigation links*/
-.navbar-centre a {
-    font-size: 30px;
-    color:white;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-}
 
 /* Styles for the search bar */
 .search-bar {
+  max-width: 100%;
   width: 300px;
   padding: 10px;
   font-family: 'Roboto', sans-serif;
@@ -74,77 +81,148 @@
 
 /* Styles for the search button */
 .search-button {
-  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));;
+  max-width: 100%;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
   color: white;
   font-family: 'Roboto', sans-serif;
   border: none;
   border-radius: 5px;
+  margin-top: 5px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: .3s;
 }
 
+.search-button:hover {
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
 /*Sets navigation link icons styles*/
 .social-icons {
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 65px;
-    
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-evenly;
+  margin-left: 65px;
+  
 }
 
 /*Hover settings for navbar links*/
 .navbar-centre a:hover,
 .navbar-centre a.active {
-    color:gold;
+  color:gold;
 }
 
 /*Grid container for page content items*/
 .skill-container {
-    display: grid;
-    grid-template-columns: 300px, 1fr, 1fr;
-    grid-template-rows: auto 650px 650px 650px 650px 650px;
-    grid-gap: 55px;
-    min-width: 420px;
-    margin-top: 75px; 
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: calc(100vh + 750px);
-    max-height: calc(100vh - 150px); /* Adjust max-height */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 420px;
+  margin-top: 75px; 
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: calc(100vh + 750px);
+  max-height: 100%;
+  gap: 25px;
+}
+
+
+/* .skill-container > * {
+  flex: 1 1 calc(33.33% - 55px); /* 33.33% for 3 columns and subtracting the gap */
+  /* height: 650px; /* This sets a fixed height for all items, you might need to adjust this */
+
 
   /*Page content heading*/
   .heading-1 {
-    grid-column: 1/4; 
-    grid-row: 1; 
+    display: flex;
+    max-width: 100%;
+    flex: 1; 
     color: white;
     text-align: left;
     font-size: 55px;
     font-weight: 700;
-    margin-bottom: 15px;
     padding: 35px;
+    margin-left: 40px;
     overflow: hidden;
     word-wrap: break-word;
+  }
+
+  .heading-1-h3 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    text-align: left;
+    max-width: 100%;
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    padding: 35px;
   }
   
   /*Heading 1 styles*/
   .heading-1 h1 {
     font-family: 'Roboto', sans-serif;
   }
-  /*Heading 3 styles*/
-  .heading-1 h3 {
-    font-family: 'Roboto Slab', serif;
 
+  .js-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 75px; 
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 50px;
+    min-height: fit-content;
+    max-height: fit-content;
+    gap: 20px;
+}
+
+  /*JS logo grid alignment and image settings*/
+  .js-image {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-left: 25px; 
+    margin-top: 0px;
+    height: 250px;
+    min-height: 100px;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+    
   }
+  
+ 
   /*Javascript section grid item alignment and styles*/
   .heading-2 {
-    grid-column: 2; 
-    grid-row: 2; 
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
     color: white;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
-    min-width: 350px;
     padding: 35px;
+    margin-left: 20px;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: 600px;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
@@ -153,6 +231,19 @@
     word-wrap: break-word;
     
   }
+
+  /*JS project image grid alignment and settings*/
+  .js-project-logo {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 0px;
+    max-height: 600px;
+    min-height: 300px;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+  }
+
   /*Content styles*/
   .heading-2 p {
     font-family: 'Raleway', sans-serif;
@@ -167,16 +258,44 @@
     color:gold;
   }
 
+  .html-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 150px;
+    min-height: fit-content;
+    max-height: fit-content;
+    gap: 20px;
+}
+
+  
+  /*html image size*/
+  .html-image {
+    display: flex;
+   flex: 1;
+   flex-wrap: wrap; 
+   margin-top: 0px;
+   height: 270px;
+   min-height: 100px;
+}
+
   /*HTML section grid item styles and settings*/
   .heading-3 {
-    grid-column: 2/3; 
-    grid-row: 3; 
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
     color: white;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
-    min-width: 350px;
     padding: 35px;
+    margin-left: 20px;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: 600px;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
@@ -184,6 +303,18 @@
     overflow: hidden;
     word-wrap: break-word;
     
+  }
+
+  /*html project image settings*/
+  .html-project-logo {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 0px;
+    max-height: 600px;
+    min-height: 300px;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
   }
 
   /*Content styles*/
@@ -204,23 +335,28 @@
 
 /*CSS section grid item styles and settings*/
   .heading-4 {
-    grid-column: 2/3; 
-    grid-row: 4; 
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
     color: white;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
-    min-width: 350px;
     padding: 35px;
+    margin-left: 20px;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: 600px;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     word-wrap: break-word;
+    word-break: keep-all;
     
   }
-
   /*Content styles*/
   .heading-4 p {
     font-family: 'Raleway', sans-serif;
@@ -239,23 +375,28 @@
 
   /*SQL section grid item styles and settings*/
   .heading-5 {
-    grid-column: 2/3; 
-    grid-row: 5; 
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
     color: white;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
-    min-width: 350px;
     padding: 35px;
+    margin-left: 20px;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: 600px;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     word-wrap: break-word;
+    word-break: keep-all;
     
   }
-
 /*Content styles*/
   .heading-5 p {
     font-family: 'Raleway', sans-serif;
@@ -270,22 +411,6 @@
   /*Link hover style*/
   .heading-5 a:hover {
     color:gold;
-  }
-  
-/*HTML logo grid alignment*/
-  .html-logo {
-    grid-column: 1/2; 
-    grid-row: 3/4; 
-    margin-top: 0px;
-    
-  }
-
-  /*HTMLproject image grid alignment*/
-  .html-logo-2 {
-    grid-column: 3/4; 
-    grid-row: 3/4; 
-    margin-top: 0px;
-    
   }
 
   /*CSS logo grid alignment*/
@@ -317,35 +442,7 @@
     margin-top: 0px;
   }
   
-  /*JS logo grid alignment and image settings*/
-  .js-image {
-    grid-column: 1/2; 
-    grid-row: 2/2; 
-    margin-top: 0px;
-    height: 250px;
-    min-height: 100px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-    
-  }
-
-  /*JS project image grid alignment and settings*/
-  .js-project-logo {
-    grid-column: 3; 
-    grid-row: 2; 
-    margin-top: 0px;
-    height: 650px;
-    min-height: 300px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-  /*html image size*/
-  .html-image {
-    height: 300px;
-    
-    
-  }
+  
 
   /*CSS project image settings*/
   .css-image-2 {
@@ -354,12 +451,7 @@
     box-shadow: 0px 4px 6px black;
   }
 
-  /*html project image settings*/
-  .html-project-logo {
-    height: minmax(100px, 300px);
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black; 
-  }
+  
 
   /*SQL image size*/
   .sql-image {
