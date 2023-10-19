@@ -68,8 +68,10 @@ body {
 
 /* Styles for the search bar */
 .search-bar {
+display: flex;
+flex-wrap: wrap;
 max-width: 100%;
-width: 300px;
+min-width: 300px;
 padding: 5px;
 font-family: 'Roboto', sans-serif;
 border: 1px solid #ccc;
@@ -79,6 +81,8 @@ font-size: 16px;
 
 /* Styles for the search button */
 .search-button {
+display: flex;
+flex-wrap: wrap;
 max-width: 100%;
 background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
 color: white;
@@ -114,7 +118,7 @@ display: flex;
 flex-wrap: wrap;
 max-width: 100%;
 justify-content: space-evenly;
-margin-left: 65px;
+margin-left: 15px;
 
 }
 
