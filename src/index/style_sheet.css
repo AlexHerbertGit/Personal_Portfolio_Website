@@ -7,6 +7,13 @@
   
 }
 
+@media (max-width: 768px) { /* Adjust this breakpoint based on your design */
+  .item-2, .item-3, .item-4, .item-5 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
 body {
   display: flex;
   background: rgb(75, 74, 74); /*Sets background color*/
@@ -121,21 +128,27 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 350px;
-  max-height: calc(100vh + 750px);
+  min-height: fit-content;
+  max-height: fit-content;
+  gap: 20px;
 }
 
-.home-container > div {
-  flex: 1 1 calc(25% - 45px); /* Assuming a gap of 45px */
-  min-width: 400px;
-  max-width: 750px;
+.home-container-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px; 
+  margin-bottom: 150px;
+  min-height: fit-content;
+  max-height: fit-content;
+  gap: 20px;
 }
 
 .item-2, .item-3, .item-4, .item-5 {
-  flex: 0 0 50%; /* This makes each item take up 25% of the container's width */
-  box-sizing: border-box; /* To include padding and border in the item's total width */
-  padding: 0 10px; /* Optional: Add some padding for spacing between items */
+  flex: 0 0 calc(50% - 10px); /* This makes each item take up half of the container's width minus 10px for spacing */
+  box-sizing: border-box;
+  padding: 5px; /* This will give a spacing of 10px between the items */
 }
-
   /*Page content heading*/
   .item-1 {
     flex: 0 0 100%; /* This makes it span the entire width */
@@ -169,9 +182,8 @@ body {
     font-size: 25px;
     font-weight: 500;
     padding: 35px;
-    max-height: 650px;
-    min-height: auto;
-    width: 1fr;
+    min-height: fit-content;
+    max-height: fit-content;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
@@ -209,7 +221,8 @@ body {
     .profile-image {
       display: flex;
       flex: 1;
-      max-height: 650px;
+      min-height: fit-content;
+      max-height: 700px;
       border-radius: 75px;
       box-shadow: 0px 4px 6px black;
   }
@@ -225,7 +238,7 @@ body {
   font-weight: 500;
   padding: 35px;
   max-height: fit-content;
-  min-height: auto;
+  min-height: fit-content;
   background-color: rgb(5, 36, 59);
   border-radius: 50px;
   box-shadow: 0px 4px 6px black;
@@ -243,7 +256,7 @@ body {
   font-weight: 500;
   padding: 35px;
   max-height: fit-content;
-  min-height: auto;
+  min-height: fit-content;
   background-color: rgb(5, 36, 59);
   border-radius: 50px;
   box-shadow: 0px 4px 6px black;
