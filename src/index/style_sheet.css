@@ -149,7 +149,7 @@ body {
 .item-2, .item-3, .item-4, .item-5 {
   flex: 0 0 calc(50% - 10px); /* This makes each item take up half of the container's width minus 10px for spacing */
   box-sizing: border-box;
-  padding: 5px; /* This will give a spacing of 10px between the items */
+  padding: 0px; /* This will give a spacing of 10px between the items */
 }
   /*Page content heading*/
   .item-1 {
@@ -191,7 +191,7 @@ body {
     box-shadow: 0px 4px 6px black;
     font-family: 'Roboto', sans-serif;
     word-wrap: break-word;
-    word-break: break-all;
+    word-break: keep-all;
     
   }
 
@@ -213,21 +213,20 @@ body {
   
   /*Profile Picture grid item alignment settings*/
   .item-3 {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    margin-top: 0px;
-  }
-
+    display: block;  /* Change from flex to block */
+    min-width: 700px;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+}
   /*Profile Image styles and settings*/
-    .profile-image {
-      display: flex;
-      flex: 1;
-      min-height: fit-content;
-      max-height: 700px;
-      border-radius: 75px;
-      box-shadow: 0px 4px 6px black;
-  }
+  .item-3 img {
+    border-radius: 75px;
+    width: 100%;       
+    height: auto;      
+    display: block;    
+    max-width: 100%;   
+}
+
 
 /*Career section grid item alignment and styles*/ 
 .item-4 {
@@ -239,14 +238,15 @@ body {
     font-size: 25px;
     font-weight: 500;
     padding: 35px;
-    min-height: fit-content;
+    min-width: 500px;
+    min-height: 700px;
     max-height: fit-content;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
     font-family: 'Roboto', sans-serif;
     word-wrap: break-word;
-    word-break: break-all;
+    word-break: keep-all;
 }
 .item-4 p {
   font-family: 'Raleway', sans-serif;
@@ -262,6 +262,7 @@ body {
     font-size: 25px;
     font-weight: 500;
     padding: 35px;
+    min-width: 300px;
     min-height: fit-content;
     max-height: fit-content;
     background-color: rgb(5, 36, 59);
@@ -269,7 +270,7 @@ body {
     box-shadow: 0px 4px 6px black;
     font-family: 'Roboto', sans-serif;
     word-wrap: break-word;
-    word-break: break-all;
+    word-break: keep-all;
 }
 
 /*Removes list style from footer*/
