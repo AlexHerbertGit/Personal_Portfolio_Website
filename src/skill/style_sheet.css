@@ -138,11 +138,6 @@ body {
 }
 
 
-/* .skill-container > * {
-  flex: 1 1 calc(33.33% - 55px); /* 33.33% for 3 columns and subtracting the gap */
-  /* height: 650px; /* This sets a fixed height for all items, you might need to adjust this */
-
-
   /*Page content heading*/
   .heading-1 {
     display: flex;
