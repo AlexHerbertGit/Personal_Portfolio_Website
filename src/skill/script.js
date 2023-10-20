@@ -15,3 +15,15 @@ function toggleSkillDetails(element) {
         }, 500); // 500ms matches the transition duration
     }
 }
+
+function toggleSkillContainerDirection() {
+    // Get the .skill-container element
+    const skillContainer = document.querySelector('.skill-container');
+
+    // Check the current flex-direction and toggle it
+    if (skillContainer.style.flexDirection === 'row' || skillContainer.style.flexDirection === '') {
+        skillContainer.style.flexDirection = 'column';
+    } else {
+        skillContainer.style.flexDirection = 'row';
+    }
+}
