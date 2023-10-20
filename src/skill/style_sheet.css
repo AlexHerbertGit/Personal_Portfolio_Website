@@ -1,33 +1,26 @@
-/*Removes defualt margins and padding from html file*/
+@media (max-width: 100vw) {
+  /* Styles for screens smaller than 768px */
+  /* You can add specific styles for mobile devices here if needed */
+}
+
+/* Removes default margins and padding from the HTML file */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
-    
- }
+}
 
 body {
   display: flex;
-  background: rgb(75, 74, 74); /*Sets background color*/
-  margin: 0; /* Remove default margin */
-  
+  flex-direction: row; 
+  align-items: center; 
+  background: rgb(75, 74, 74) url('markus-spiske-hvSr_CVecVI-unsplash.jpg') center/cover no-repeat fixed; 
+  margin: 0; 
+  flex-wrap: wrap;
+  max-height: 100vh; 
 }
 
-/*Container for background image*/
-.background-container {
-  position: fixed;
-  background-attachment: fixed;
-  background-position: center;
-  background-image: url('markus-spiske-hvSr_CVecVI-unsplash.jpg');
-  background-size: cover;
-  background-repeat: repeat;
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow-y: auto;
-  overflow-x: auto;
-}
+
 
 /*Navigation bar*/
 .header {
@@ -38,7 +31,7 @@ body {
   top: 0;
   left: 0;
   max-width: 100%;
-  width: 100%;
+  width: 100vw;
   padding: 20px 10%;
   background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
   justify-content: space-between;
@@ -128,11 +121,15 @@ body {
 .skill-container {
   display: flex;
   flex-wrap: wrap;
+  flex: 3;
+  flex-direction: column;
+  justify-content: space-evenly;
   min-width: 420px;
-  margin-top: 75px; 
+  max-width: 100%;
+  margin-top: 55px; 
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: calc(100vh + 400px);
+  margin-bottom: 150px;
   max-height: 100%;
   gap: 25px;
 }
@@ -173,17 +170,10 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
-  .js-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 75px; 
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 50px;
-    min-height: fit-content;
-    max-height: fit-content;
-    gap: 20px;
+
+.js-details {
+  display: none; /* Initially hidden */
+  z-index: 0; /* To ensure the details are below the logo */
 }
 
   /*JS logo grid alignment and image settings*/
@@ -197,25 +187,80 @@ body {
     min-height: 100px;
     border-radius: 75px;
     box-shadow: 0px 4px 6px black;
+    cursor: pointer;
     
   }
   
  
   /*Javascript section grid item alignment and styles*/
-  .heading-2 {
+  .js-container{
     display: flex; 
     flex-wrap: wrap;
     flex: 1;
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+  .js-details {
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 35px;
+    margin: 10px;
+    min-width: fit-content;
+    max-width: 100%;
+    min-height: fit-content;
+    max-height: 100%;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+    opacity: 0; 
+    visibility: hidden; /* Initially set the visibility to hidden */
+    position: absolute; 
+    height: 100%;
+}
+  
+
+  /*JS project image grid alignment and settings*/
+  .js-project-logo {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin: 20px;
+    max-height: 100%;
+    min-width: 100%;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+  }
+
+  .js-content {
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
     color: white;
     text-align: left;
     font-size: 30px;
     font-weight: 500;
     padding: 35px;
     margin-left: 20px;
-    min-width: 300px;
+    min-width: fit-content;
     max-width: 100%;
     min-height: fit-content;
-    max-height: 600px;
+    max-height: 100%;
     background-color: rgb(5, 36, 59);
     border-radius: 50px;
     box-shadow: 0px 4px 6px black;
@@ -225,43 +270,28 @@ body {
     
   }
 
-  /*JS project image grid alignment and settings*/
-  .js-project-logo {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    margin-top: 0px;
-    max-height: 600px;
-    min-height: 300px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
   /*Content styles*/
-  .heading-2 p {
+  .js-details p {
     font-family: 'Raleway', sans-serif;
   }
   /*Link style and transistion*/
-  .heading-2 a {
+  .js-details a {
     color: white;
     transition: .3s;
   }
   /*Link hover style*/
-  .heading-2 a:hover {
+  .js-details a:hover {
     color:gold;
   }
 
   .html-container {
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 2%;
-    margin-right: 2%;
+    flex: 1;
+    flex-direction: row;
     margin-bottom: 50px;
-    min-height: fit-content;
-    max-height: fit-content;
-    gap: 20px;
-}
+    
+  }
 
   
   /*html image size*/
@@ -272,117 +302,183 @@ body {
    margin-top: 0px;
    height: 270px;
    min-height: 100px;
+   cursor: pointer;
 }
 
-  /*HTML section grid item styles and settings*/
-  .heading-3 {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin-left: 20px;
-    min-width: 300px;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 600px;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    
-  }
+.html-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+.html-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
 
   /*html project image settings*/
   .html-project-logo {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    margin-top: 0px;
-    max-height: 600px;
-    min-height: 300px;
+    margin: 20px;
+    max-height: 900px;
+    min-width: 100%;
     border-radius: 75px;
     box-shadow: 0px 4px 6px black;
   }
 
+
   /*Content styles*/
-  .heading-3 p {
+  .html-details p {
     font-family: 'Raleway', sans-serif;
   }
 
 /*Link style and transistion*/
-  .heading-3 a {
+  .html-details a {
     color: white;
     transition: .3s;
   }
 
 /*Link hover style*/
-  .heading-3 a:hover {
+  .html-details a:hover {
     color:gold;
   }
 
   .css-container {
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 2%;
-    margin-right: 2%;
+    flex: 1;
+    flex-direction: row;
     margin-bottom: 50px;
-    min-height: fit-content;
-    max-height: fit-content;
-    gap: 20px;
+    
   }
 
   .css-image {
     display: flex;
-    flex: 1;
-    flex-wrap: wrap; 
-    margin-top: 0px;
-    height: 270px;
-    min-height: 100px;
+   flex: 1;
+   flex-wrap: wrap; 
+   margin-top: 0px;
+   height: 270px;
+   min-height: 100px;
+   cursor: pointer;
 }
 
-/*CSS section grid item styles and settings*/
-  .heading-4 {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin-left: 20px;
-    min-width: 300px;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 600px;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    
-  }
+.css-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+.css-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+
   /*Content styles*/
-  .heading-4 p {
+  .css-details p {
     font-family: 'Raleway', sans-serif;
   }
 
   /*Link style and transistion*/
-  .heading-4 a {
+  .css-details a {
     color: white;
     transition: .3s;
   }
 
   /*Link hover style*/
-  .heading-4 a:hover {
+  .css-details a:hover {
     color:gold;
   }
 
@@ -399,66 +495,99 @@ body {
   }
 
 .sql-container {
-   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 50px;
-    min-height: fit-content;
-    max-height: fit-content;
-    gap: 20px;
-  }
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  margin-bottom: 50px;
+  
+}
 
-  /*SQL section grid item styles and settings*/
-  .heading-5 {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin-left: 20px;
-    min-width: 300px;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 600px;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    
-  }
+/*SQL image size*/
+.sql-image {
+ display: flex;
+ flex: 1;
+ flex-wrap: wrap; 
+ margin-top: 0px;
+ height: 270px;
+ min-height: 100px;
+ cursor: pointer;
+}
+
+.sql-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+.sql-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+
 /*Content styles*/
-  .heading-5 p {
+  .sql-details p {
     font-family: 'Raleway', sans-serif;
   }
 
   /*Link style and transistion*/
-  .heading-5 a {
+  .sql-details a {
     color: white;
     transition: .3s;
   }
 
   /*Link hover style*/
-  .heading-5 a:hover {
+  .sql-details a:hover {
     color:gold;
   }
 
-  /*SQL image size*/
-  .sql-image {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap; 
-    margin-top: 0px;
-    height: 270px;
-    min-height: 100px;
-}
-
+  
   /*SQL project image size and settings*/
   .sql-image-2 {
     display: flex;
@@ -470,6 +599,7 @@ body {
     border-radius: 75px;
     box-shadow: 0px 4px 6px black;
   }
+
 
   /*Footer alignment and styles*/
   .footer {
