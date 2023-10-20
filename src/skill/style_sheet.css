@@ -1,36 +1,622 @@
 /* Removes default margins and padding from the HTML file */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  background: rgb(75, 74, 74) url('markus-spiske-hvSr_CVecVI-unsplash.jpg') center center no-repeat fixed;
-  background-size: cover;  /* This ensures the image covers the entire body */
-  margin: 0;
-  flex-wrap: wrap;
-  min-height: 100vh;  /* This ensures the body takes up the entire viewport height */
-  max-width: 100%;
-  overflow-x: hidden;  /* This prevents horizontal scrolling if any overflow occurs */
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+background: rgb(75, 74, 74) url('markus-spiske-hvSr_CVecVI-unsplash.jpg') center center no-repeat fixed;
+background-size: cover;  /* This ensures the image covers the entire body */
+margin: 0;
+flex-wrap: wrap;
+min-height: 100vh;  /* This ensures the body takes up the entire viewport height */
+max-width: 100%;
+overflow-x: hidden;  /* This prevents horizontal scrolling if any overflow occurs */
 }
 
 
 
 /*Navigation bar*/
 .header {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+position: fixed;
+top: 0;
+left: 0;
+max-width: 100%;
+width: 100vw;
+padding: 20px 10%;
+background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+justify-content: space-between;
+align-items: center;
+z-index: 100;
+border-bottom: solid 2px;
+border-color: black;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+}
+
+.header > div:first-child {
+flex: 1;
+}
+
+.header > div:last-child {
+flex: 3;
+}
+
+/*Placeholder for website logo, currently just text in the navigation bar*/
+.logo {
+  font-size: 55px;
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Styles for the search bar */
+.search-bar {
+max-width: 100%;
+width: 300px;
+padding: 10px;
+font-family: 'Roboto', sans-serif;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+/* Styles for the search button */
+.search-button {
+max-width: 100%;
+background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+color: white;
+font-family: 'Roboto', sans-serif;
+border: none;
+border-radius: 5px;
+margin-top: 5px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+transition: .3s;
+}
+
+.search-button:hover {
+background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+flex-wrap: wrap;
+max-width: 100%;
+font-size: 30px;
+color:white;
+text-decoration: none;
+font-weight: 500;
+margin-left: 35px;
+transition: .3s;
+}
+/*Sets navigation link icons styles*/
+.social-icons {
+padding: 10px;
+display: flex;
+flex-wrap: wrap;
+max-width: 100%;
+justify-content: space-evenly;
+margin-left: 65px;
+
+}
+
+/*Hover settings for navbar links*/
+.navbar-centre a:hover,
+.navbar-centre a.active {
+color:gold;
+}
+
+/*Grid container for page content items*/
+.skill-container {
+display: flex;
+flex-wrap: nowrap;
+flex: 3;
+flex-direction: row;
+justify-content: space-evenly;
+position: relative;
+background-color: rgba(30, 60, 83, 0.9);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+min-width: fit-content;
+max-width: 100%;
+margin-left: 5%;
+margin-right: 5%;
+padding: 30px;
+max-height: 100%;
+gap: 25px;
+transition: height 0.76s ease-in-out, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.heading-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: sticky;
+  margin-top: 150px;
+}
+
+/*Page content heading*/
+.heading-1 {
+  display: flex;
+  max-width: 100%;
+  flex: 1; 
+  color: white;
+  text-align: left;
+  font-size: 55px;
+  font-weight: 700;
+  padding: 35px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.heading-1-h3 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  text-align: left;
+  max-width: 100%;
+  font-size: 33px;
+  font-weight: 700;
+  padding: 35px;
+}
+
+/*Heading 1 styles*/
+.heading-1 h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.js-details {
+display: none; /* Initially hidden */
+z-index: 0; /* To ensure the details are below the logo */
+max-width: 100%;
+}
+
+/*JS logo grid alignment and image settings*/
+.js-image {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; 
+  height: 250px;
+  min-height: 100px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+  cursor: pointer;
+  
+}
+
+
+/*Javascript section grid item alignment and styles*/
+.js-container{
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  /* margin: 100px; */
+}
+
+.js-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+
+/*JS project image grid alignment and settings*/
+.js-project-logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 20px;
+  max-height: 100%;
+  min-width: 100%;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+.js-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+/*Content styles*/
+.js-details p {
+  font-family: 'Raleway', sans-serif;
+}
+/*Link style and transistion*/
+.js-details a {
+  color: white;
+  transition: .3s;
+}
+/*Link hover style*/
+.js-details a:hover {
+  color:gold;
+}
+
+.html-container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  /* margin: 100px; */
+  
+}
+
+
+/*html image size*/
+.html-image {
+ display: flex;
+ flex: 1;
+ flex-wrap: wrap; 
+ margin-top: 0px;
+ height: 270px;
+ min-height: 100px;
+ cursor: pointer;
+}
+
+.html-details {
+display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+.html-content {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+justify-content: center;
+align-content: space-evenly;
+color: white;
+text-align: left;
+font-size: 30px;
+font-weight: 500;
+padding: 35px;
+margin-left: 20px;
+min-width: fit-content;
+max-width: 100%;
+min-height: fit-content;
+max-height: 100%;
+background-color: rgb(5, 36, 59);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+word-wrap: break-word;
+
+}
+
+/*html project image settings*/
+.html-project-logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 20px;
+  max-height: 900px;
+  min-width: 100%;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+
+/*Content styles*/
+.html-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.html-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.html-details a:hover {
+  color:gold;
+}
+
+.css-container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  /* margin: 100px; */
+  
+}
+
+.css-image {
+  display: flex;
+ flex: 1;
+ flex-wrap: wrap; 
+ margin-top: 0px;
+ height: 270px;
+ min-height: 100px;
+ cursor: pointer;
+}
+
+.css-details {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+justify-content: center;
+align-content: space-evenly;
+color: white;
+text-align: left;
+font-size: 30px;
+font-weight: 500;
+padding: 35px;
+margin: 10px;
+min-width: fit-content;
+max-width: 100%;
+min-height: fit-content;
+max-height: 100%;
+background-color: rgb(5, 36, 59);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+word-wrap: break-word;
+transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+opacity: 0; 
+visibility: hidden; /* Initially set the visibility to hidden */
+position: absolute; 
+height: 100%;
+}
+
+.css-content {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+justify-content: center;
+align-content: space-evenly;
+color: white;
+text-align: left;
+font-size: 30px;
+font-weight: 500;
+padding: 35px;
+margin-left: 20px;
+min-width: fit-content;
+max-width: 100%;
+min-height: fit-content;
+max-height: 100%;
+background-color: rgb(5, 36, 59);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+word-wrap: break-word;
+
+}
+
+
+/*Content styles*/
+.css-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.css-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.css-details a:hover {
+  color:gold;
+}
+
+/*CSS project image settings*/
+.css-image-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: 0px;
+  max-height: 600px;
+  min-height: 300px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+.sql-container {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+margin-bottom: 100px;
+
+}
+
+/*SQL image size*/
+.sql-image {
+display: flex;
+flex: 1;
+flex-wrap: wrap; 
+margin-top: 0px;
+height: 270px;
+min-height: 100px;
+cursor: pointer;
+}
+
+.sql-details {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+justify-content: center;
+align-content: space-evenly;
+color: white;
+text-align: left;
+font-size: 30px;
+font-weight: 500;
+padding: 35px;
+margin: 10px;
+min-width: fit-content;
+max-width: 100%;
+min-height: fit-content;
+max-height: 100%;
+background-color: rgb(5, 36, 59);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+word-wrap: break-word;
+transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+opacity: 0; 
+visibility: hidden; /* Initially set the visibility to hidden */
+position: absolute; 
+height: 100%;
+}
+
+.sql-content {
+display: flex; 
+flex-wrap: wrap;
+flex: 1;
+flex-direction: row;
+justify-content: center;
+align-content: space-evenly;
+color: white;
+text-align: left;
+font-size: 30px;
+font-weight: 500;
+padding: 35px;
+margin-left: 20px;
+min-width: fit-content;
+max-width: 100%;
+min-height: fit-content;
+max-height: 100%;
+background-color: rgb(5, 36, 59);
+border-radius: 50px;
+box-shadow: 0px 4px 6px black;
+font-family: 'Roboto', sans-serif;
+overflow: hidden;
+word-wrap: break-word;
+
+}
+
+
+/*Content styles*/
+.sql-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.sql-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.sql-details a:hover {
+  color:gold;
+}
+
+
+/*SQL project image size and settings*/
+.sql-image-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: 0px;
+  max-height: 600px;
+  min-height: 300px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+
+/*Footer alignment and styles*/
+.footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   max-width: 100%;
-  width: 100vw;
+  width: 100%;
   padding: 20px 10%;
   background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
   justify-content: space-between;
@@ -42,621 +628,39 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.header > div:first-child {
-  flex: 1;
-}
-
-.header > div:last-child {
-  flex: 3;
-}
-
-/*Placeholder for website logo, currently just text in the navigation bar*/
-.logo {
-    font-size: 55px;
-    color:white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Styles for the search bar */
-.search-bar {
-  max-width: 100%;
-  width: 300px;
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Styles for the search button */
-.search-button {
-  max-width: 100%;
-  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  border: none;
-  border-radius: 5px;
-  margin-top: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.search-button:hover {
-  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
-}
-
-/*Sets styles for navigation links*/
-.navbar-centre a {
-  flex-wrap: wrap;
-  max-width: 100%;
-  font-size: 30px;
-  color:white;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 35px;
-  transition: .3s;
-}
-/*Sets navigation link icons styles*/
-.social-icons {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  justify-content: space-evenly;
-  margin-left: 65px;
-  
-}
-
-/*Hover settings for navbar links*/
-.navbar-centre a:hover,
-.navbar-centre a.active {
-  color:gold;
-}
-
-/*Grid container for page content items*/
-.skill-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 3;
-  flex-direction: row;
-  justify-content: space-evenly;
-  position: relative;
-  background-color: rgba(30, 60, 83, 0.9);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  min-width: 420px;
-  max-width: 100%;
-  margin-top: 50px; 
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 30px;
-  max-height: 100%;
-  gap: 25px;
-}
-
-
-  /*Page content heading*/
-  .heading-1 {
-    display: flex;
-    max-width: 100%;
-    flex: 1; 
-    color: white;
-    text-align: left;
-    font-size: 55px;
-    font-weight: 700;
-    padding: 35px;
-    margin-left: 40px;
-    margin-top: 50px;
-    overflow: hidden;
-    word-wrap: break-word;
-  }
-
-  .heading-1-h3 {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-    font-family: 'Roboto Slab', serif;
-    color: white;
-    text-align: left;
-    max-width: 100%;
-    font-size: 33px;
-    font-weight: 700;
-    margin-left: 40px;
-    padding: 35px;
-  }
-  
-  /*Heading 1 styles*/
-  .heading-1 h1 {
-    font-family: 'Roboto', sans-serif;
-  }
-
-
-.js-details {
-  display: none; /* Initially hidden */
-  z-index: 0; /* To ensure the details are below the logo */
-  max-width: 100%;
-}
-
-  /*JS logo grid alignment and image settings*/
-  .js-image {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap; 
-    height: 250px;
-    min-height: 100px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-    cursor: pointer;
-    
-  }
-  
- 
-  /*Javascript section grid item alignment and styles*/
-  .js-container{
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    /* margin: 100px; */
-  }
-
-  .js-details {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-evenly;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin: 10px;
-    min-width: fit-content;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 100%;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
-    opacity: 0; 
-    visibility: hidden; /* Initially set the visibility to hidden */
-    position: absolute; 
-    height: 100%;
-}
-  
-
-  /*JS project image grid alignment and settings*/
-  .js-project-logo {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    margin: 20px;
-    max-height: 100%;
-    min-width: 100%;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-  .js-content {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-evenly;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin-left: 20px;
-    min-width: fit-content;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 100%;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    
-  }
-
-  /*Content styles*/
-  .js-details p {
-    font-family: 'Raleway', sans-serif;
-  }
-  /*Link style and transistion*/
-  .js-details a {
-    color: white;
-    transition: .3s;
-  }
-  /*Link hover style*/
-  .js-details a:hover {
-    color:gold;
-  }
-
-  .html-container {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    /* margin: 100px; */
-    
-  }
-
-  
-  /*html image size*/
-  .html-image {
-   display: flex;
-   flex: 1;
-   flex-wrap: wrap; 
-   margin-top: 0px;
-   height: 270px;
-   min-height: 100px;
-   cursor: pointer;
-}
-
-.html-details {
-  display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-evenly;
-    color: white;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 35px;
-    margin: 10px;
-    min-width: fit-content;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 100%;
-    background-color: rgb(5, 36, 59);
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    word-wrap: break-word;
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
-    opacity: 0; 
-    visibility: hidden; /* Initially set the visibility to hidden */
-    position: absolute; 
-    height: 100%;
-}
-
-.html-content {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-evenly;
-  color: white;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 35px;
-  margin-left: 20px;
-  min-width: fit-content;
-  max-width: 100%;
-  min-height: fit-content;
-  max-height: 100%;
-  background-color: rgb(5, 36, 59);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  word-wrap: break-word;
-  
-}
-
-  /*html project image settings*/
-  .html-project-logo {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    margin: 20px;
-    max-height: 900px;
-    min-width: 100%;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-
-  /*Content styles*/
-  .html-details p {
-    font-family: 'Raleway', sans-serif;
-  }
-
-/*Link style and transistion*/
-  .html-details a {
-    color: white;
-    transition: .3s;
-  }
-
-/*Link hover style*/
-  .html-details a:hover {
-    color:gold;
-  }
-
-  .css-container {
-    display: flex; 
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    /* margin: 100px; */
-    
-  }
-
-  .css-image {
-    display: flex;
-   flex: 1;
-   flex-wrap: wrap; 
-   margin-top: 0px;
-   height: 270px;
-   min-height: 100px;
-   cursor: pointer;
-}
-
-.css-details {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-evenly;
-  color: white;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 35px;
-  margin: 10px;
-  min-width: fit-content;
-  max-width: 100%;
-  min-height: fit-content;
-  max-height: 100%;
-  background-color: rgb(5, 36, 59);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  word-wrap: break-word;
-  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
-  opacity: 0; 
-  visibility: hidden; /* Initially set the visibility to hidden */
-  position: absolute; 
-  height: 100%;
-}
-
-.css-content {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-evenly;
-  color: white;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 35px;
-  margin-left: 20px;
-  min-width: fit-content;
-  max-width: 100%;
-  min-height: fit-content;
-  max-height: 100%;
-  background-color: rgb(5, 36, 59);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  word-wrap: break-word;
-  
-}
-
-
-  /*Content styles*/
-  .css-details p {
-    font-family: 'Raleway', sans-serif;
-  }
-
-  /*Link style and transistion*/
-  .css-details a {
-    color: white;
-    transition: .3s;
-  }
-
-  /*Link hover style*/
-  .css-details a:hover {
-    color:gold;
-  }
-
-  /*CSS project image settings*/
-  .css-image-2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    margin-top: 0px;
-    max-height: 600px;
-    min-height: 300px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-.sql-container {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  margin-bottom: 100px;
-  
-}
-
-/*SQL image size*/
-.sql-image {
- display: flex;
- flex: 1;
- flex-wrap: wrap; 
- margin-top: 0px;
- height: 270px;
- min-height: 100px;
- cursor: pointer;
-}
-
-.sql-details {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-evenly;
-  color: white;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 35px;
-  margin: 10px;
-  min-width: fit-content;
-  max-width: 100%;
-  min-height: fit-content;
-  max-height: 100%;
-  background-color: rgb(5, 36, 59);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  word-wrap: break-word;
-  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
-  opacity: 0; 
-  visibility: hidden; /* Initially set the visibility to hidden */
-  position: absolute; 
-  height: 100%;
-}
-
-.sql-content {
-  display: flex; 
-  flex-wrap: wrap;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-evenly;
-  color: white;
-  text-align: left;
-  font-size: 30px;
-  font-weight: 500;
-  padding: 35px;
-  margin-left: 20px;
-  min-width: fit-content;
-  max-width: 100%;
-  min-height: fit-content;
-  max-height: 100%;
-  background-color: rgb(5, 36, 59);
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px black;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  word-wrap: break-word;
-  
-}
-
-
-/*Content styles*/
-  .sql-details p {
-    font-family: 'Raleway', sans-serif;
-  }
-
-  /*Link style and transistion*/
-  .sql-details a {
-    color: white;
-    transition: .3s;
-  }
-
-  /*Link hover style*/
-  .sql-details a:hover {
-    color:gold;
-  }
-
-  
-  /*SQL project image size and settings*/
-  .sql-image-2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    margin-top: 0px;
-    max-height: 600px;
-    min-height: 300px;
-    border-radius: 75px;
-    box-shadow: 0px 4px 6px black;
-  }
-
-
-  /*Footer alignment and styles*/
-  .footer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    width: 100%;
-    padding: 20px 10%;
-    background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    border-bottom: solid 2px;
-    border-color: black;
-    box-shadow: 0px 4px 6px black;
-    font-family: 'Roboto', sans-serif;
-  }
-
 /*Footer content styles and settings*/
 .footer-content li {
-  font-size: 18px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  list-style: none;
-  color:white;
-  font-family: 'Roboto', sans-serif;
-  padding: 3px;
-  margin: 20px;
-  background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
-  border-radius: 50px;
-  border-color: rgb(5, 36, 59);
-  border-style: solid;
-  padding: 14px;
+font-size: 18px;
+display: inline-flex;
+flex-wrap: wrap;
+list-style: none;
+color:white;
+font-family: 'Roboto', sans-serif;
+padding: 3px;
+margin: 20px;
+background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
+border-radius: 50px;
+border-color: rgb(5, 36, 59);
+border-style: solid;
+padding: 14px;
 }
 
 /*Footer link style and transition*/
 .footer-content a {
-  color: white;
-  transition: .3s;
+color: white;
+transition: .3s;
 }
 
 /*Hover styles for footer links*/
 .footer-content a:hover {
-  color:gold;
+color:gold;
 }
 
 /*LinkedIn and GitHub Icon style and settings*/
 .social-icons-footer {
-  display: flex;
-  align-content: right;
-  justify-content: space-evenly;
-  margin-left: 65px;
-  
+display: flex;
+align-content: right;
+justify-content: space-evenly;
+margin-left: 65px;
+
 }
