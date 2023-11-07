@@ -3,31 +3,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
-  
 }
 
 body {
   display: flex;
-  background: rgb(75, 74, 74); /*Sets background color*/
-  margin: 0; /* Remove default margin */
-  
-}
-
-/*Container for background image*/
-.background-container {
-  position: fixed;
-  background-attachment: fixed;
-  background-position: center;
-  background-image: url('anton-maksimov-5642-su-qM37iptlCNY-unsplash.jpg');
+  flex-direction: column;
+  flex: 1;
+  background-image: url('umberto-FewHpO4VC9Y-unsplash.jpg');
   background-size: cover;
   background-repeat: repeat;
-  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  overflow-y: auto;
-  overflow-x: auto;
+  margin: 0; 
+  overflow-x: hidden;
+  z-index: -100;
 }
+
 
 /*Navigation bar*/
 .header {
@@ -39,9 +32,9 @@ body {
   left: 0;
   max-width: 100%;
   width: 100%;
-  padding: 20px 10%;
+  padding: 20px;
   background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   z-index: 100;
   border-bottom: solid 2px;
@@ -57,75 +50,164 @@ body {
 .header > div:last-child {
   flex: 3;
 }
-
 /*Placeholder for website logo, currently just text in the navigation bar*/
 .logo {
-  font-size: 55px;
+  max-width: 100%;
+  font-size: 35px;
   color:white;
   text-decoration: none;
   font-weight: 600;
 }
 
+#user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 150px;
+  background: rgb(13, 62, 100);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.login-text {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+#logout-button {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
+  background: rgb(55, 167, 201);
+  color: white;
+  cursor: pointer;
+}
+
+#account-name {
+  margin: 10px;
+  
+}
+
+/* Style for the container holding the login icon and Firebase UI */
+.firebase-login {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#firebase-login-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#firebaseui-auth-container {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it at the bottom of the .firebase-login container */
+  left: 0; /* Align it to the left of the .firebase-login container */
+  z-index: 1;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 200px;
+}
+
 /* Styles for the search bar */
-.search-bar {
-display: flex;
-flex-wrap: wrap;
-max-width: 100%;
-min-width: 300px;
-padding: 5px;
-font-family: 'Roboto', sans-serif;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 16px;
+#search-bar {
+  max-width: 200px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
 /* Styles for the search button */
 .search-button {
-display: flex;
-flex-wrap: wrap;
-max-width: 100%;
-background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
-color: white;
-font-family: 'Roboto', sans-serif;
-border: none;
-border-radius: 5px;
-margin-top: 5px;
-padding: 10px 20px;
-font-size: 16px;
-cursor: pointer;
-transition: .3s;
+  max-width: 100%;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
 }
 
 .search-button:hover {
-background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Search results*/
+.search-dropdown {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: none;
+  color: white;
+  background: linear-gradient(to left, rgb(55, 167, 201), rgb(5, 36, 59) );
+  width: 400px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown div:hover {
+  background-color: #f1f1f1;
+  color: black;
 }
 
 /*Sets styles for navigation links*/
 .navbar-centre a {
-flex-wrap: wrap;
-max-width: 100%;
-font-size: 30px;
-color:white;
-text-decoration: none;
-font-weight: 500;
-margin-left: 35px;
-transition: .3s;
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
 }
 /*Sets navigation link icons styles*/
 .social-icons {
-padding: 10px;
-display: flex;
-flex-wrap: wrap;
-max-width: 100%;
-justify-content: space-evenly;
-margin-left: 15px;
-
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-evenly;
+  margin-left: 25px;
+  
 }
 
 /*Hover settings for navbar links*/
 .navbar-centre a:hover,
 .navbar-centre a.active {
-color:gold;
+  color:gold;
 }
 
 /*Grid container for page content items*/
@@ -153,8 +235,8 @@ color:gold;
     text-align: center;
     font-weight: 500;
     padding: 2%;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 20%;
+    margin-left: 20%;
     max-height: fit-content;
     min-height: auto;
     background-color: rgb(5, 36, 59);
@@ -186,11 +268,11 @@ color:gold;
     min-width: 400px; 
     color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 500;
     padding: 2%;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 20%;
+    margin-left: 20%;
     max-height: fit-content;
     min-height: auto;
     background-color: rgb(5, 36, 59);
@@ -252,7 +334,7 @@ input[type="tel"],
 input[type="email"],
 input[type="message"],
 textarea {
-    width: 90%;
+    width: 70%;
     padding: 10px;
     margin-bottom: 7px;
     background-color: rgb(192, 192, 192);
@@ -280,39 +362,42 @@ input[type="submit"]:hover {
 
   
   /*Footer alignment and styles*/
-  .footer {
-    position: static;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-top: solid 2px;
-    border-color: black;
-    box-shadow: 0px 4px 6px black;
-    z-index: -1;
-    opacity: 1; 
-    transition: opacity 0.3s;
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*Footer content styles and settings*/
 .footer-content li {
-    font-size: 18px;
+    font-size: 12px;
     display: inline-flex;
+    flex-wrap: wrap;
     list-style: none;
     color:white;
     font-family: 'Roboto', sans-serif;
     padding: 3px;
-    margin: 30px;
+    margin: 10px;
     background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
     border-radius: 50px;
-    border-color: rgb(5, 36, 59);;
+    border-color: rgb(5, 36, 59);
     border-style: solid;
     padding: 14px;
-    
 }
 
 /*Footer link style and transition*/
@@ -327,11 +412,11 @@ input[type="submit"]:hover {
   }
 
 /*LinkedIn and GitHub Icon style and settings*/
-.social-icons-footer {
-  display: flex;
-  align-content: right;
-  justify-content: space-evenly;
-  margin-left: 65px;
+  .social-icons-footer {
+    display: flex;
+    align-content: right;
+    justify-content: space-evenly;
+    margin-left: 65px;
     
 }
 

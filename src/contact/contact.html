@@ -16,32 +16,48 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <!--Firebase script/css-->
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
+
     </head>
-    <body>
-        <!--Background container for background image-->
-        <div class="background-container">
+    <body>  
         
         <!--Naviagtion bar and Logo-->
         <header class="header">
-            <a href="\src\index\index.html" class="logo">Alex Herbert Portfolio</a>
-            <nav class="navbar-centre">
-                <a href="src\index\index.html">Home</a>
-                <a href="\src\skill\skill.html">Skills</a>
-                <a href="contact.html" class="active">Contact</a>    
-            </nav>
-            
-            <!--Search Bar-->
-            <form action="/search" method="get">
-                <input type="text" class="search-bar" name="query" placeholder="Search...">
-                <button type="submit" class="search-button">Search</button>
-            </form>
+            <a href="/src/index/index.html" class="logo">Alex Herbert Portfolio</a>
+                <nav class="navbar-centre">
+                    <a href="/src/index/index.html">Home</a>
+                    <a href="/src/skill/skill.html">Skills</a>
+                    <a href="/src/contact/contact.html" class="active">Contact</a>    
+                </nav>
+
+               <!--Search Bar-->
+            <form>
+                <input type="text" id="search-bar" name="query" placeholder="Search...">
+                <div id="search-results" class="search-dropdown"></div>
+                <button type="button" class="search-button" onclick="performSearch()">Search</button>
+              </form>
+                
+             <!-- User Info Display -->
+            <div id="user-info" style="display: none;">
+                <div id="account-name"></div>
+                <button id="logout-button">Logout</button>
+              </div>
 
         <!--Icons for LinkedIn and GitHub-->
-            <nav class="social-icons">
-                <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
-                <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
-            </nav>
+        <nav class="social-icons">
+            <div class="firebase-login">
+                <div id="firebase-login-icon">
+                    <img src="icons8-login-96.png" height="70px">
+                    <div class="login-text">Login</div>
+                  </div>
+                <div id="firebaseui-auth-container" style="display: none;"></div>
+              </div>
+            <a href="https://www.linkedin.com/in/alex-herbert-tech/" target="_blank"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+            <a href="https://github.com/AlexHerbertGit" target="_blank"><img src="pngwing.com.png" height="70px" width="70px"></a>
+        </nav>
         </header>
+
 
         <!--Grid Conatiner for page content-->
             <div class="home-container">
@@ -50,12 +66,12 @@
                 <div class="item-1"><h1>Contact Me</h1><h3>Job Opportunities and Projects</h3></div>
 
                 <!--Grid item for About Me content-->
-                <div class="item-2"><h2><u>Get in Touch</u></h2>
+                <div class="item-2">
 
                     <!--Form content-->
                     <br><p>Please fill out the form below with your details and a message detailing your inquiry</p>
                     <br>
-                        <form action="submit_form.php" method="POST"> <!--Add form submission url in this part when available-->
+                    <form id="contactForm"> 
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required><br><br>
                     
@@ -98,7 +114,14 @@
         </nav>
     </footer>
 
-</div>
-<script src="script.js" async defer></script>     
+
+ <!-- </div> -->
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+ <!-- App.js and script.js script links -->
+ <script src="/src/app/app.js"></script>
+ <script src="script.js" defer></script>         
 </body>
 </html>

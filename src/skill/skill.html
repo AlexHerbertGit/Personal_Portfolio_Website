@@ -16,10 +16,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <!--Firebase script/css-->
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     </head>
     <body>
         <!--Background container for background image-->
-        <div class="background-container">
+      
 
         <!--Naviagtion bar and Logo-->    
         <header class="header">
@@ -30,17 +32,32 @@
                     <a href="/src/contact/contact.html">Contact</a>    
                 </nav>
 
-                <!--Search Bar-->
-            <form action="/search" method="get">
-                <input type="text" class="search-bar" name="query" placeholder="Search...">
-                <button type="submit" class="search-button">Search</button>
-            </form>
+            <!--Search Bar-->
+            <form>
+                <input type="text" id="search-bar" name="query" placeholder="Search...">
+                <div id="search-results" class="search-dropdown"></div>
+                <button type="button" class="search-button" onclick="performSearch()">Search</button>
+              </form>
+
+            <!-- User Info Display -->
+            <div id="user-info" style="display: none;">
+                <div id="account-name"></div>
+                <button id="logout-button">Logout</button>
+              </div>
+            
 
         <!--Icons for LinkedIn and GitHub-->
-                <nav class="social-icons">
-                    <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
-                    <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
-                </nav>
+        <nav class="social-icons">
+            <div class="firebase-login">
+                <div id="firebase-login-icon">
+                    <img src="icons8-login-96.png" height="70px">
+                    <div class="login-text">Login</div>
+                  </div>
+                <div id="firebaseui-auth-container" style="display: none;"></div>
+              </div>
+            <a href="https://www.linkedin.com/in/alex-herbert-tech/" target="_blank"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+            <a href="https://github.com/AlexHerbertGit" target="_blank"><img src="pngwing.com.png" height="70px" width="70px"></a>
+        </nav>
         </header>
 
         <!--Grid item for page heading-->
@@ -49,7 +66,7 @@
                 <h1>Skills and Projects</h1>
             </div>
             <div class="heading-1-h3">
-                <h3>What I am working on</h3>
+                <h3>Select a programming language to see the projects related to them</h3>
             </div> 
         </div>
 
@@ -145,32 +162,47 @@
                     </div>
                 </div>
             </div>
-            
-        </div>
-    
-    <!--Footer container-->    
-    <footer class="footer">
-
-        <!--Container for footer links and content-->
-        <div class="footer-content">
-
-            <!--List for footer contact information info and links-->
-            <ul>
-                <li><b>Email</b> - alex.herbert.tech@gmail.com</li>
-                <li><b>Phone</b> - 027 225 7572</li>
-                <li><b>LinkedIn</b> -  <a href="https://www.linkedin.com/in/alex-herbert-tech/">alex-herbert-tech</li></a>
-                <li><b>GitHub</b> - <a href="https://github.com/AlexHerbertGit">AlexHerbertGit</li></a>
-            </ul>
         </div>
 
-        <!--Container for LinkedIn and GitHub icons and links-->
-        <nav class="social-icons-footer">
-            <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
-            <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
-        </nav>
-    </footer>
+         <!--Comments Section-->
+         <div id="comments-section">
+            <h3>Comments</h3>
+            <div id="comments-container"></div>
+            <form id="comment-form">
+              <textarea id="comment-input" placeholder="Leave a comment..." required></textarea>
+              <button type="submit">Post Comment</button>
+            </form>
+          </div>
+
+        <!--Footer container-->    
+        <footer class="footer">
+
+            <!--Container for footer links and content-->
+            <div class="footer-content">
     
-    </div>
-    <script src="\src\skill\script.js" defer></script>     
+                <!--List for footer contact information info and links-->
+                <ul>
+                    <li><b>Email</b> - alex.herbert.tech@gmail.com</li>
+                    <li><b>Phone</b> - 027 225 7572</li>
+                    <li><b>LinkedIn</b> -  <a href="https://www.linkedin.com/in/alex-herbert-tech/">alex-herbert-tech</li></a>
+                    <li><b>GitHub</b> - <a href="https://github.com/AlexHerbertGit">AlexHerbertGit</li></a>
+                </ul>
+            </div>
+           
+    
+            <!--Container for LinkedIn and GitHub icons and links-->
+            <nav class="social-icons-footer">
+                <a href="https://www.linkedin.com/in/alex-herbert-tech/"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+                <a href="https://github.com/AlexHerbertGit"><img src="pngwing.com.png" height="70px" width="70px"></a>
+            </nav>
+        </footer> 
+    <!-- </div> -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+    <!-- App.js and script.js script links -->
+    <script src="/src/app/app.js"></script>
+    <script src="script.js" defer></script>         
     </body>
 </html>
