@@ -1,0 +1,423 @@
+/*Removes defualt margins and padding from html file*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-image: url('umberto-FewHpO4VC9Y-unsplash.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0; 
+  overflow-x: hidden;
+  z-index: -100;
+}
+
+
+/*Navigation bar*/
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header > div:first-child {
+  flex: 1;
+}
+
+.header > div:last-child {
+  flex: 3;
+}
+/*Placeholder for website logo, currently just text in the navigation bar*/
+.logo {
+  max-width: 100%;
+  font-size: 35px;
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 150px;
+  background: rgb(13, 62, 100);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.login-text {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+#logout-button {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
+  background: rgb(55, 167, 201);
+  color: white;
+  cursor: pointer;
+}
+
+#account-name {
+  margin: 10px;
+  
+}
+
+/* Style for the container holding the login icon and Firebase UI */
+.firebase-login {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#firebase-login-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#firebaseui-auth-container {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it at the bottom of the .firebase-login container */
+  left: 0; /* Align it to the left of the .firebase-login container */
+  z-index: 1;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 200px;
+}
+
+/* Styles for the search bar */
+#search-bar {
+  max-width: 200px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* Styles for the search button */
+.search-button {
+  max-width: 100%;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.search-button:hover {
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Search results*/
+.search-dropdown {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: none;
+  color: white;
+  background: linear-gradient(to left, rgb(55, 167, 201), rgb(5, 36, 59) );
+  width: 400px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown div:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
+/*Sets navigation link icons styles*/
+.social-icons {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-evenly;
+  margin-left: 25px;
+  
+}
+
+/*Hover settings for navbar links*/
+.navbar-centre a:hover,
+.navbar-centre a.active {
+  color:gold;
+}
+
+/*Grid container for page content items*/
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 420px;
+  margin-top: 75px; 
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 250px;
+  max-height: 100%;
+  gap: 25px;
+}
+  
+  /*Page content heading*/
+  .item-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    min-width: 400px; 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 500;
+    padding: 2%;
+    margin-right: 20%;
+    margin-left: 20%;
+    max-height: fit-content;
+    min-height: auto;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /*Heading 1 styles*/
+  .item-1 h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 75px;
+    min-width: 100%;
+  }
+
+  /*Heading 3 styles*/
+  .item-1 h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+
+  }
+
+  /*Form grid item styles and grid settings*/
+  .item-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    min-width: 400px; 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 2%;
+    margin-right: 20%;
+    margin-left: 20%;
+    max-height: fit-content;
+    min-height: auto;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+
+  /*Content styles*/
+  .item-2 p {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .item-2 h2 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  /*Link style and transistion*/
+  .item-2 a {
+    color: white;
+    transition: .3s;
+  }
+
+  /*Link hover style*/
+  .item-2 a:hover {
+    color:gold;
+  }
+
+/*Form styles and settings*/
+  .item-2 form {
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+    background: linear-gradient(to top, rgb(28, 88, 134), rgb(55, 167, 201));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+    break-inside: keep-all;
+}
+
+/* Style labels for the input fields */
+.item-2 label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="message"],
+textarea {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 7px;
+    background-color: rgb(192, 192, 192);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Styles for submit button */
+input[type="submit"] {
+    background: linear-gradient(to bottom, rgb(28, 88, 134), rgb(55, 167, 201));
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Styles for the submit button on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+  
+  /*Footer alignment and styles*/
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Footer content styles and settings*/
+.footer-content li {
+    font-size: 12px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding: 3px;
+    margin: 10px;
+    background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
+    border-radius: 50px;
+    border-color: rgb(5, 36, 59);
+    border-style: solid;
+    padding: 14px;
+}
+
+/*Footer link style and transition*/
+.footer-content a {
+    color: white;
+    transition: .3s;
+  }
+
+/*Hover styles for footer links*/
+.footer-content a:hover {
+    color:gold;
+  }
+
+/*LinkedIn and GitHub Icon style and settings*/
+  .social-icons-footer {
+    display: flex;
+    align-content: right;
+    justify-content: space-evenly;
+    margin-left: 65px;
+    
+}
+
+

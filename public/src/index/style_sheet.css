@@ -1,0 +1,458 @@
+
+/*Removes defualt margins and padding from html file*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  
+}
+
+ @media (max-width: 768px) { /* Adjust this breakpoint based on your design */
+   .item-2, .item-3, .item-4, .item-5 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+} 
+
+body {
+  display: flex;
+  background: rgb(75, 74, 74); /*Sets background color*/
+  margin: 0; /* Remove default margin */
+  
+}
+
+/*Container for background image*/
+.background-container {
+      position: fixed;
+      background-attachment: fixed;
+      background-position: center;
+      background-image: url('umberto-FewHpO4VC9Y-unsplash.jpg');
+      background-size: cover;
+      background-repeat: repeat;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow-y: auto;
+      overflow-x: auto;
+}
+
+/*Navigation bar*/
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header > div:first-child {
+  flex: 1;
+}
+
+.header > div:last-child {
+  flex: 3;
+}
+/*Placeholder for website logo, currently just text in the navigation bar*/
+.logo {
+  max-width: 100%;
+  font-size: 35px;
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 150px;
+  background: rgb(13, 62, 100);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.login-text {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+#logout-button {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
+  background: rgb(55, 167, 201);
+  color: white;
+  cursor: pointer;
+}
+
+#account-name {
+  margin: 10px;
+  
+}
+
+/* Style for the container holding the login icon and Firebase UI */
+.firebase-login {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#firebase-login-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#firebaseui-auth-container {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it at the bottom of the .firebase-login container */
+  left: 0; /* Align it to the left of the .firebase-login container */
+  z-index: 1;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 200px;
+}
+
+/* Styles for the search bar */
+#search-bar {
+  max-width: 100%;
+  width: 200px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* Styles for the search button */
+.search-button {
+  max-width: 100%;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.search-button:hover {
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Search results*/
+.search-dropdown {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: none;
+  color: white;
+  background: linear-gradient(to left, rgb(55, 167, 201), rgb(5, 36, 59) );
+  width: 400px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown div:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
+/*Sets navigation link icons styles*/
+.social-icons {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-evenly;
+  margin-left: 35px;
+  
+}
+
+/*Hover settings for navbar links*/
+.navbar-centre a:hover,
+.navbar-centre a.active {
+  color:gold;
+}
+
+/*Home container stlyes and size settings*/
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 75px; 
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 150px;
+  min-height: fit-content;
+  max-height: fit-content;
+  gap: 20px;
+}
+
+/*Home container 2 stlyes and size settings*/
+.home-container-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px; 
+  margin-bottom: 150px;
+  min-height: fit-content;
+  max-height: fit-content;
+  gap: 20px;
+}
+
+.item-2, .item-3, .item-4, .item-5 {
+  flex: 0 0 calc(50% - 10px); 
+  box-sizing: border-box;
+  padding: 0px; 
+}
+  /*Page content heading*/
+  .item-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
+    color: white;
+    text-align: left;
+    max-width: 1000px;
+    min-height: fit-content;
+    max-height: fit-content;
+    margin-left: 5%;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding: 55px;
+}
+
+  /*Heading 1 styles*/
+  .item-1 h1 {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /*Heading 3 styles*/
+  .item-1 h3 {
+    font-family: 'Roboto Slab', serif;
+
+  }
+
+  /*About Me section grid item alignment and styles*/
+  .item-2 {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap; 
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 35px;
+    min-width: 300px;
+    min-height: fit-content;
+    max-height: fit-content;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    word-wrap: break-word;
+    word-break: keep-all;
+  }
+  
+
+  /*Content styles*/
+  .item-2 p {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  /*Link style and transistion*/
+  .item-2 a {
+    color: white;
+    transition: .3s;
+  }
+
+  /*Link hover style*/
+  .item-2 a:hover {
+    color:gold;
+  }
+  
+  /*Profile Picture grid item alignment settings*/
+  .item-3 {
+    display: block;  /* Change from flex to block */
+    min-width: fit-content;
+    max-height: fit-content;
+    border-radius: 75px;
+    box-shadow: 0px 4px 6px black;
+}
+  /*Profile Image styles and settings*/
+  .item-3 img {
+    border-radius: 75px;
+    max-height: 700px;          
+    display: block;    
+    max-width: 100%;   
+}
+
+
+/*Career section grid item alignment and styles*/ 
+.item-4 {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap; 
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 35px;
+  min-width: 300px;
+  min-height: fit-content;
+  max-height: fit-content;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+.item-4 p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Personal Skills grid item alignment and styles*/
+.item-5 {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap; 
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 35px;
+  min-width: 300px;
+  min-height: fit-content;
+  max-height: fit-content;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+
+/*Removes list style from footer*/
+.item-5 ul {
+  list-style: none;
+  font-family: 'Raleway', sans-serif;
+}
+/*Footer alignment and styles*/
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Footer content styles and settings*/
+.footer-content li {
+    font-size: 12px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding: 3px;
+    margin: 10px;
+    background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
+    border-radius: 50px;
+    border-color: rgb(5, 36, 59);
+    border-style: solid;
+    padding: 14px;
+}
+
+/*Footer link style and transition*/
+.footer-content a {
+    color: white;
+    transition: .3s;
+  }
+
+/*Hover styles for footer links*/
+.footer-content a:hover {
+    color:gold;
+  }
+
+/*LinkedIn and GitHub Icon style and settings*/
+  .social-icons-footer {
+    display: flex;
+    align-content: right;
+    justify-content: space-evenly;
+    margin-left: 65px;
+    
+}

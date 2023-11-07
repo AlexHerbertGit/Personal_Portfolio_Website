@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Alex Herbert Portfolio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Font Awesome and Google Font and API links-->
+        <link rel="stylesheet" href="style_sheet.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <!--Firebase script/css-->
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    </head>
+    <body>
+        <!--Background container for background image-->
+        <div class="background-container">
+
+        <!--Navigation bar and Logo-->
+        <header class="header">
+            <a href="/src/index/index.html" class="logo">Alex Herbert Portfolio</a>
+            <nav class="navbar-centre">
+              <a href="/src/index/index.html" class="active">Home</a>
+              <a href="/src/skill/skill.html">Skills</a>
+              <a href="/src/contact/contact.html">Contact</a>    
+            </nav>
+          
+            <!--Search Bar-->
+            <form>
+                <input type="text" id="search-bar" name="query" placeholder="Search...">
+                <div id="search-results" class="search-dropdown"></div>
+                <button type="button" class="search-button" onclick="performSearch()">Search</button>
+              </form>
+          
+            <!-- User Info Display -->
+            <div id="user-info" style="display: none;">
+              <div id="account-name"></div>
+              <button id="logout-button">Logout</button>
+            </div>
+          
+            <!--Icons for LinkedIn and GitHub-->
+            <nav class="social-icons">
+              <div class="firebase-login">
+                <div id="firebase-login-icon">
+                  <img src="icons8-login-96.png" height="70px">
+                  <div class="login-text">Login</div>
+                </div>
+                <div id="firebaseui-auth-container" style="display: none;"></div>
+              </div>
+              <a href="https://www.linkedin.com/in/alex-herbert-tech/" target="_blank"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+              <a href="https://github.com/AlexHerbertGit" target="_blank"><img src="pngwing.com.png" height="70px" width="70px"></a>
+            </nav>
+          </header>
+
+                <!--Grid item for page heading-->
+                <div class="item-1"><h1>Hi, I'm Alex Herbert</h1><h3>Junior Software Developer</h3></div>
+                 
+        <!--Grid Container for page content-->
+            <div class="home-container">
+                
+                <!--Grid item for profile picture-->
+                <div class="item-3">
+                    <img src="Profile Picture.png" alt="Profile Picture">
+                </div>
+                
+                <!--Grid item for About Me content-->
+                <div class="item-2"><h2><u>About Me</u></h2>
+                    
+                    <!--About me content-->
+                        <p>I am 31 years old and I live in Nelson, NZ. I am currently studying for my Bachelors degree in Information Technology at NMIT and will be majoring in Software Development and Design.<br><br> 
+                            Currently, I am working on developing my skills with programming languages and the software design and development processes by taking what I learn in my classes and implementing those ideas and skills into my personal projects.<br><br> 
+                            This portfolio is a showcase of some of my projects and the skills I am currently learning. Below you can follow the link to my GitHub page, this contains all of my past and current project repositories and Kanban boards.<br><br>
+                        <a href="https://github.com/AlexHerbertGit" target="_blank">Check them out here...</a></p>
+                </div>
+
+                <div class="home-container-2">
+                <!--Grid item for Career content-->
+                <div class="item-4">
+                    <h3><u>Career Overview</u></h3>
+                    
+                    <!--Career section content-->
+                        <p>I have had an 11-year career in the Hospital industry as a Chef, including many senior management roles, and I have decided to change careers and migrate into the IT industry.
+                             Software and Web development is the sector that I am most interested in and I have been focusing on improving my programming and system analysis skills to prepare myself for a career in the IT industry.<br><br>
+                            Throughout my career as a Chef I have used my trade to travel Australia and South East Asia, including owning my own Guest House business on the island of Koh Rong Samlomn in Cambodia.<br><br>
+                            I have also been involved in the creation and development of multiple start up restaurants including implementing menus and recipes, managing staff positions and duties, brand and marketing deployment, and other crucial management tasks.<br><br>
+                            Currently I am a Peer Support Facilitator at NMIT, helping my fellow students with course related topics as well as being Student Representative for my year. I am using this to not only help other students but to solidify my knowledge of Web and Software development.</p>
+                </div>
+
+                <!--Grid item for Personal content-->
+                <div class="item-5">
+                    
+                    <!--Relevant skills section content-->
+                        <ul><h3><u>Personal Skills</u></h3><br>
+                            <li>Beginner/Intermediate level JavaScript, HTML and CSS programming languages.</li>
+                            <li>Technical Writing and Documentation.</li>
+                            <li>UX and UI development.</li>
+                            <li>Computer Maintenance and Trouble shooting.</li>
+                            <li>IT Technical Support</li>
+                            <li>Database Design and SQL</li>
+                            <li>Basic Networking Skills</li><br>
+                            <li>Personal Skills:</li><br>
+                            <li>Excellent time management and punctuality.</li>
+                            <li>High level of self-motivation.</li>
+                            <li>Good communication skills.</li>
+                            <li>Team and Office management skills.</li>
+                            <li>Leadership Experience.</li>
+                            <li>Works well individually and in a team environment.</li>
+                            <li>Open to learning new skills and self-improvement.</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer container-->
+        <footer class="footer">
+
+            <!--Container for footer links and content-->
+            <div class="footer-content">
+
+                <!--List for footer contact information info and links-->
+                <ul>
+                    <li><b>Email</b> - alex.herbert.tech@gmail.com</li>
+                    <li><b>Phone</b> - 027 225 7572</li>
+                    <li><b>LinkedIn</b> -  <a href="https://www.linkedin.com/in/alex-herbert-tech/" target="_blank">alex-herbert-tech</a></li>
+                    <li><b>GitHub</b> - <a href="https://github.com/AlexHerbertGit" target="_blank">AlexHerbertGit</a></li>
+                </ul>
+            </div>
+
+            <!--Container for LinkedIn and GitHub icons and links-->
+            <nav class="social-icons-footer">
+                <a href="https://www.linkedin.com/in/alex-herbert-tech/" target="_blank"><img src="LinkedIn_logo_initials.png" height="70px" width="70px"></a>
+                <a href="https://github.com/AlexHerbertGit" target="_blank"><img src="pngwing.com.png" height="70px" width="70px"></a>
+            </nav>
+        </footer>
+
+    </div>
+     <!-- </div> -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+     <!-- App.js and script.js script links -->
+     <script src="/src/app/app.js"></script>
+     <script src="script.js" defer></script>         
+    </body>
+</html>

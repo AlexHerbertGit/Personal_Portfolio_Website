@@ -1,0 +1,859 @@
+/* Removes default margins and padding from the HTML file */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-image: url('umberto-FewHpO4VC9Y-unsplash.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0; 
+  overflow-x: hidden;
+  z-index: -100;
+}
+
+
+/*Navigation bar*/
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header > div:first-child {
+  flex: 1;
+}
+
+.header > div:last-child {
+  flex: 3;
+}
+/*Placeholder for website logo, currently just text in the navigation bar*/
+.logo {
+  max-width: 100%;
+  font-size: 35px;
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  width: 150px;
+  background: rgb(13, 62, 100);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.login-text {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+#logout-button {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Roboto', sans-serif;
+  background: rgb(55, 167, 201);
+  color: white;
+  cursor: pointer;
+}
+
+#account-name {
+  margin: 10px;
+  
+}
+
+/* Style for the container holding the login icon and Firebase UI */
+.firebase-login {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#firebase-login-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#firebaseui-auth-container {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it at the bottom of the .firebase-login container */
+  left: 0; /* Align it to the left of the .firebase-login container */
+  z-index: 1;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 200px;
+}
+
+/* Styles for the search bar */
+#search-bar {
+  max-width: 100%;
+  width: 200px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* Styles for the search button */
+.search-button {
+  max-width: 100%;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.search-button:hover {
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+/*Search results*/
+.search-dropdown {
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: none;
+  color: white;
+  background: linear-gradient(to left, rgb(55, 167, 201), rgb(5, 36, 59) );
+  width: 400px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-dropdown div:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/*Sets styles for navigation links*/
+.navbar-centre a {
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-size: 30px;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
+/*Sets navigation link icons styles*/
+.social-icons {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-evenly;
+  margin-left: 35px;
+  
+}
+
+/*Hover settings for navbar links*/
+.navbar-centre a:hover,
+.navbar-centre a.active {
+  color:gold;
+}
+
+.heading-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* margin-left: 10%; */
+}
+
+/*Page content heading*/
+.heading-1 {
+  display: flex;
+  max-width: 100%;
+  flex: 1; 
+  color: white;
+  text-align: left;
+  font-size: 35px;
+  font-weight: 700;
+  padding: 25px;
+}
+
+.heading-1-h3 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  text-align: left;
+  max-width: 100%;
+  font-size: 33px;
+  font-weight: 700;
+  padding: 35px;
+}
+
+/*Heading 1 styles*/
+.heading-1 h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Grid container for page content items*/
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px; 
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 35px;
+  min-height: fit-content;
+  max-height: fit-content;
+  min-width: 400px;
+  padding: 25px;
+  padding-left: 75px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  margin-bottom: 50px;
+  gap: 20px;
+  transition: .3s;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+}
+
+.js-details {
+display: none; /* Initially hidden */
+z-index: 0; /* To ensure the details are below the logo */
+max-width: 100%;
+}
+
+/*JS logo grid alignment and image settings*/
+.js-image {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 150px;
+  min-height: 100px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 6px black;
+  cursor: pointer;
+  transition: .3s;
+}
+
+
+/*Javascript section grid item alignment and styles*/
+.js-container{
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  /* margin: 100px; */
+}
+
+.js-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 25px;
+  margin: 10px;
+  min-width: 400px;
+  max-width: 100%;
+  /* min-height: fit-content; */
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+
+/*JS project image grid alignment and settings*/
+.js-project-logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 20px;
+  max-height: 600px;
+  min-width: 400px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+.js-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: 400px;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+/*Content styles*/
+.js-details p {
+  font-family: 'Raleway', sans-serif;
+}
+/*Link style and transistion*/
+.js-details a {
+  color: white;
+  transition: .3s;
+}
+/*Link hover style*/
+.js-details a:hover {
+  color:gold;
+}
+
+.html-container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  /* margin: 100px; */
+}
+
+
+/*html image size*/
+.html-image {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; 
+  height: 150px;
+  min-height: 100px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.html-details {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin: 10px;
+  min-width: 400px;
+  max-width: 100%;
+  /* min-height: fit-content; */
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+  opacity: 0; 
+  visibility: hidden; /* Initially set the visibility to hidden */
+  position: absolute; 
+  height: 100%;
+}
+
+
+.html-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: 400px;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+/*html project image settings*/
+.html-project-logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 20px;
+  max-height: 600px;
+  min-width: 400px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+
+/*Content styles*/
+.html-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.html-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.html-details a:hover {
+  color:gold;
+}
+
+.css-container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  /* margin: 100px; */
+}
+
+.css-image {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; 
+  height: 150px;
+  min-height: 100px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.css-details {
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 35px;
+    margin: 10px;
+    min-width: 400px;
+    max-width: 100%;
+    /* min-height: fit-content; */
+    max-height: 100%;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+    opacity: 0; 
+    visibility: hidden; /* Initially set the visibility to hidden */
+    position: absolute; 
+    height: 100%;
+}
+
+.css-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  min-width: 400px;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+
+/*Content styles*/
+.css-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.css-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.css-details a:hover {
+  color:gold;
+}
+
+/*CSS project image settings*/
+.css-image-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: 0px;
+  max-height: 600px;
+  min-height: 300px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+.sql-container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  margin-bottom: 50px;
+  justify-content: center;
+  /* margin: 100px; */
+}
+
+/*SQL image size*/
+.sql-image {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  height: 150px;
+  min-height: 100px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.sql-details {
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 35px;
+    margin: 10px;
+    min-width: 400px;
+    max-width: 100%;
+    /* min-height: fit-content; */
+    max-height: 100%;
+    background-color: rgb(5, 36, 59);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px black;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Add visibility to the transition */
+    opacity: 0; 
+    visibility: hidden; /* Initially set the visibility to hidden */
+    position: absolute; 
+    height: 100%;
+}
+
+.sql-content {
+  display: flex; 
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 35px;
+  margin-left: 20px;
+  margin-bottom: 150px;
+  min-width: 400px;
+  max-width: 100%;
+  min-height: fit-content;
+  max-height: 100%;
+  background-color: rgb(5, 36, 59);
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  word-wrap: break-word;
+  
+}
+
+
+/*Content styles*/
+.sql-details p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/*Link style and transistion*/
+.sql-details a {
+  color: white;
+  transition: .3s;
+}
+
+/*Link hover style*/
+.sql-details a:hover {
+  color:gold;
+}
+
+
+/*SQL project image size and settings*/
+.sql-image-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: 0px;
+  max-height: 600px;
+  min-height: 300px;
+  border-radius: 75px;
+  box-shadow: 0px 4px 6px black;
+}
+
+/* Comments section styles */
+#comments-section {
+  margin-top: 20px;
+  position: relative;
+  padding: 25px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px black;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  margin-bottom: 350px;
+}
+
+#comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.comment {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: fit-content;
+  max-width: 500px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px black;
+}
+
+.comment .comment-author {
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.comment .comment-text {
+  margin-top: 5px;
+  font-size: 13px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.comment .comment-timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+  font-family: 'Roboto Slab', serif;
+}
+
+#comment-input {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 95%;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto Slab', serif;
+}
+
+#comments-section h3 {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+#comments-section button {
+  display: flex;
+  background: linear-gradient(to left, rgb(5, 36, 59), rgb(55, 167, 201));
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+  
+}
+
+
+/*Footer alignment and styles*/
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 5%;
+  background: linear-gradient(to right, rgb(5, 36, 59), rgb(55, 167, 201));
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: solid 2px;
+  border-color: black;
+  box-shadow: 0px 4px 6px black;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Footer content styles and settings*/
+.footer-content li {
+    font-size: 12px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding: 3px;
+    margin: 10px;
+    background: linear-gradient(to right, rgb(10, 72, 119), rgb(55, 167, 201));
+    border-radius: 50px;
+    border-color: rgb(5, 36, 59);
+    border-style: solid;
+    padding: 14px;
+}
+
+/*Footer link style and transition*/
+.footer-content a {
+    color: white;
+    transition: .3s;
+  }
+
+/*Hover styles for footer links*/
+.footer-content a:hover {
+    color:gold;
+  }
+
+/*LinkedIn and GitHub Icon style and settings*/
+  .social-icons-footer {
+    display: flex;
+    align-content: right;
+    justify-content: space-evenly;
+    margin-left: 65px;
+    
+}
