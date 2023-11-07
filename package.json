@@ -1,0 +1,19 @@
+{
+  "name": "personal_portfolio_website-1",
+  "version": "1.0.0",
+  "description": "My personal online portfolio website, the goal for this is to implement SEO, responsive web design and interactive elements using Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexHerbertGit/Personal_Portfolio_Website.git"
+  },
+  "author": "Alex Herbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexHerbertGit/Personal_Portfolio_Website/issues"
+  },
+  "homepage": "https://github.com/AlexHerbertGit/Personal_Portfolio_Website#readme"
+}
