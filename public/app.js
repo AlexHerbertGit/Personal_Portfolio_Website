@@ -221,7 +221,7 @@ function editComment(commentId) {
     // Sign in options for the Firebase UI, configured in the Firesbase Console also.
     signInFlow: 'popup',
     // Update this with correct url when hosted.
-    signInSuccessUrl: '<index.html>', 
+    signInSuccessUrl: '<https://www.alex-herbert-tech.live>', 
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       {
