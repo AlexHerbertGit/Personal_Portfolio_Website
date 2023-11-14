@@ -221,7 +221,7 @@ function editComment(commentId) {
     // Sign in options for the Firebase UI, configured in the Firesbase Console also.
     signInFlow: 'popup',
     // Update this with correct url when hosted.
-    signInSuccessUrl: '</src/index/index.html>', 
+    signInSuccessUrl: '<index.html>', 
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       {
@@ -256,28 +256,28 @@ const contentIndex = [
     title: 'JavaScript Projects',
     keywords: ['javascript', 'project', 'skills', 'programming', 'language'],
     description: 'Projects that use JavaScript programming Language',
-    url: '/src/skill/skill.html'
+    url: 'skill.html'
   },
   {
     id: 'html',
     title: 'HTML Projects',
     keywords: ['html', 'web', 'development', 'skills', 'project'],
     description: 'HTML and Web Developement skills and projects',
-    url: '/src/skill/skill.html',
+    url: 'skill.html',
   },
   {
     id: 'css',
     title: 'CSS Projects',
     keywords: ['css', 'web', 'development', 'skills', 'project'],
     description: 'CSS and Web Development skills and projects',
-    url: '/src/skill/skill.html',
+    url: 'skill.html',
   },
   {
     id: 'sql',
     title: 'SQL Projects',
     keywords: ['sql', 'database', 'backend', 'development', 'skills', 'projects'],
     description: 'SQL database projects',
-    url: '/src/skill/skill.html',
+    url: 'skill.html',
   }
 ];
 
